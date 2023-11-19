@@ -19,6 +19,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               children: [
                 Text("head1"),
+                // Card(),
                 SizedBox(
                   height: 200,
                   child: ListView.builder(
