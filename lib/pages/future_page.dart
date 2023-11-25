@@ -23,10 +23,22 @@ class _FuturePageState extends State<FuturePage> {
     });
   }
 
-  geta() {
-    return 10;
+  Future<List<String>> getProducts() async {
+    return Future.delayed(Duration(seconds: 4), () {
+      return ["Fresa", "Mango", "Mandarina", "Palta"];
+    });
   }
 
+  List<String> lista2 = [
+    "arroz",
+    "papa",
+    "lechuga",
+    "tomate",
+    "arroz",
+    "papa",
+    "lechuga",
+    "tomate"
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,15 +49,20 @@ class _FuturePageState extends State<FuturePage> {
         ),
         body: Center(
           child: FutureBuilder(
-            future: getTitle(),
+            future: getProducts(),
             builder: (BuildContext context, AsyncSnapshot snap) {
-              if (snap.connectionState == ConnectionState.waiting) {
-                return CircularProgressIndicator();
-              } else if (snap.hasError) {
-                return (Text("Error: ${snap.error}"));
-              } else {
-                return Text(snap.data);
+              if (snap.hasData) {
+                List<String> data = snap.data;
+                return ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ListTile(
+                      title: Text(data[index]),
+                    );
+                  },
+                );
               }
+              return CircularProgressIndicator();
             },
           ),
         ),
