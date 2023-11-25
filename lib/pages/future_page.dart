@@ -40,16 +40,21 @@ class _FuturePageState extends State<FuturePage> {
     return title;
   }
 
+  //INIT STATE NO PUEDE SER ASINCRONO (ASYNC)
   @override
-  void initState() {
+  void initState() async {
     // TODO: implement initState
     super.initState();
     print("INITTTTTTTTTTTTT");
-    message2().then((value) {
-      title = value;
-      print(title);
-      setState(() {});
-    });
+    //FORMA 1 USANDO .THEN PARA OBTENER EL VALOR DEL FUTURE
+    // message2().then((value) {
+    //   title = value;
+    //   print(title);
+    //   setState(() {});
+    // });
+
+    // FORMA 2 PARA OBTENER EL VALOR DEL FUTURE
+    title = await message2(); //NO SE PUEDE
   }
 
   @override
