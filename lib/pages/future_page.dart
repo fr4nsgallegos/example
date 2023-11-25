@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:example/pages/main_page.dart';
 import 'package:flutter/material.dart';
 
 class FuturePage extends StatefulWidget {
@@ -80,11 +81,31 @@ class _FuturePageState extends State<FuturePage> {
           title: Text("Futuresssss"),
         ),
         body: Center(
-          child: Text(
-            //PARA ACCEDER A STRING QUE ME DEVUELVE EL FUTURE MESSAGE 2... ?
-            title,
-            style: TextStyle(fontSize: 50),
-            maxLines: 4,
+          child: Column(
+            children: [
+              Text(
+                //PARA ACCEDER A STRING QUE ME DEVUELVE EL FUTURE MESSAGE 2... ?
+                "FUTURES",
+                style: TextStyle(fontSize: 50),
+                maxLines: 4,
+              ),
+              Text(
+                //PARA ACCEDER A STRING QUE ME DEVUELVE EL FUTURE MESSAGE 2... ?
+                title,
+                style: TextStyle(fontSize: 50),
+                maxLines: 4,
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MainPage(),
+                      ),
+                    );
+                  },
+                  child: Text("go to main"))
+            ],
           ),
         ),
       ),
