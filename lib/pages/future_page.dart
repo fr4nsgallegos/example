@@ -32,13 +32,14 @@ class _FuturePageState extends State<FuturePage> {
         ),
         body: Center(
           child: FutureBuilder(
-            future: getNumber(),
+            future: getTitle(),
             builder: (BuildContext context, AsyncSnapshot snap) {
               print("-----------------------");
               print("SNAP: $snap");
               print("ESTADO DE CONEXIÓN: ${snap.connectionState}");
               print("TIENE DATA?: ${snap.hasData}");
               print("TIENE ERROR?: ${snap.hasError}");
+              print("VALOR: ${snap.data}");
               print("-----------------------");
               return Text("HOLA");
             },
