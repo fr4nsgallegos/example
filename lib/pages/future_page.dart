@@ -22,14 +22,17 @@ class _FuturePageState extends State<FuturePage> {
     });
   }
 
+  //FUNCION CON RETORNO
   suma() {
     return 2;
   }
 
+  //FUNCION SIN RETORNO
   resta() {
     print("ressta");
   }
 
+  // FUNCION ASINCRONA
   mensaje() async {
     title = await message2();
     print("MENSAJE FUNCION");
@@ -51,7 +54,10 @@ class _FuturePageState extends State<FuturePage> {
 
   @override
   Widget build(BuildContext context) {
-    print("BUILDDDDDDD"); // message2().then((value) {
+    print("BUILDDDDDDD");
+
+    //NO FUNCIONA ESTO
+    // message2().then((value) {
     //   print(value);
     //   title = value;
     //   // num++;
@@ -66,7 +72,7 @@ class _FuturePageState extends State<FuturePage> {
         body: Center(
           child: Text(
             //PARA ACCEDER A STRING QUE ME DEVUELVE EL FUTURE MESSAGE 2... ?
-            title.toString(),
+            title,
             style: TextStyle(fontSize: 50),
             maxLines: 4,
           ),
