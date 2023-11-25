@@ -34,6 +34,37 @@ class DevicePage extends StatelessWidget {
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
             ),
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          Container(
+            width: 300,
+            height: 80,
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.blue,
+            ),
+            child: Container(
+              alignment: Alignment.center,
+              height: 90,
+              width: 230,
+              decoration: BoxDecoration(
+                color: Color(0XFF93CCF9),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(50),
+                  bottomLeft: Radius.circular(50),
+                ),
+              ),
+              child: Text(
+                "Reto",
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           )
         ],
       ),
