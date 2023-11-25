@@ -12,7 +12,7 @@ class _FuturePageState extends State<FuturePage> {
   String title = "Hola a todos soy title";
 
   Future<String> getTitle() async {
-    return Future.delayed(Duration(seconds: 10), () {
+    return Future.delayed(Duration(seconds: 4), () {
       return "Real - Kendrick Lamar";
     });
   }
@@ -23,29 +23,29 @@ class _FuturePageState extends State<FuturePage> {
     });
   }
 
+  geta() {
+    return 10;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           title: Text("Futuresssss"),
+          elevation: 20,
         ),
         body: Center(
           child: FutureBuilder(
             future: getTitle(),
             builder: (BuildContext context, AsyncSnapshot snap) {
-              if (snap.hasData) {
+              if (snap.connectionState == ConnectionState.waiting) {
+                return CircularProgressIndicator();
+              } else if (snap.hasError) {
+                return (Text("Error: ${snap.error}"));
+              } else {
                 return Text(snap.data);
               }
-              return Container(
-                height: 20,
-                width: 20,
-                child: CircularProgressIndicator(
-                  backgroundColor: Colors.red,
-                  color: Colors.cyan,
-                  // strokeWidth: 8,
-                ),
-              );
             },
           ),
         ),
