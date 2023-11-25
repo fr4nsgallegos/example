@@ -65,6 +65,27 @@ class DevicePage extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            width: 350,
+            height: 250,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(30),
+              gradient: LinearGradient(
+                  colors: [
+                    Colors.red,
+                    Colors.blue,
+                    // Color(0xff102128),
+                    // Color(0xff2C5264),
+                  ],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  stops: [0.1, 0.99]),
+            ),
           )
         ],
       ),
