@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class FuturePage extends StatefulWidget {
@@ -13,8 +15,11 @@ class _FuturePageState extends State<FuturePage> {
     return "Saludando por una función";
   }
 
+  //UN FUTURE VA A REPRESENTAR UN VALOR QUE VA A ESTAR DISPONIBLE EN UN FUTURO, NO EN EL INSTANTE
   Future<String> message2() async {
-    return "Hola soy un future";
+    return Future.delayed(Duration(seconds: 4), () {
+      return "Hola soy un future";
+    });
   }
 
   suma() {
@@ -33,13 +38,25 @@ class _FuturePageState extends State<FuturePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print("INITTTTTTTTTTTTT");
     message2().then((value) {
-      print(value);
       title = value;
-      // num++;
+      print(title);
       setState(() {});
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print("BUILDDDDDDD"); // message2().then((value) {
+    //   print(value);
+    //   title = value;
+    //   // num++;
+    //   setState(() {});
+    // });
     // mensaje();
     return SafeArea(
       child: Scaffold(
