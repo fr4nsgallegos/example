@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: MainPage(),
+      home: FuturePage(),
       debugShowCheckedModeBanner: false,
     ),
   );
