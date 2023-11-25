@@ -41,7 +41,8 @@ class _FuturePageState extends State<FuturePage> {
               print("TIENE ERROR?: ${snap.hasError}");
               print("VALOR: ${snap.data}");
               print("-----------------------");
-              return Text("HOLA");
+              return Text(snap.data ?? "esperando");
+              // return Text(snap.data == null ? "esperando" : snap.data);
             },
           ),
         ),
