@@ -1,4 +1,7 @@
+import 'package:example/pages/device_page.dart';
 import 'package:example/pages/future_page.dart';
+import 'package:example/pages/home_page.dart';
+import 'package:example/pages/init_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -35,28 +38,22 @@ class _MainPageState extends State<MainPage> {
         ),
         body: TabBarView(
           children: [
-            // FuturePage(),
-            Center(
-              child: ElevatedButton(
-                  child: Text("goo"),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => FuturePage(),
-                      ),
-                    );
-                  }),
-            ),
-            Center(
-              child: Text("ESTA ES LA PANTALLA 2"),
-            ),
-            Center(
-              child: Text("ESTA ES LA PANTALLA 3"),
-            ),
-            Center(
-              child: Text("ESTA ES LA PANTALLA 4"),
-            ),
+            // Center(
+            //   child: ElevatedButton(
+            //       child: Text("goo"),
+            //       onPressed: () {
+            //         Navigator.push(
+            //           context,
+            //           MaterialPageRoute(
+            //             builder: (context) => FuturePage(),
+            //           ),
+            //         );
+            //       }),
+            // ),
+            FuturePage(),
+            InitPage(),
+            HomePage(),
+            DevicePage(),
           ],
         ),
       ),

@@ -77,9 +77,9 @@ class _FuturePageState extends State<FuturePage> {
     // mensaje();
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text("Futuresssss"),
-        ),
+        // appBar: AppBar(
+        //   title: Text("Futuresssss"),
+        // ),
         body: Center(
           child: Column(
             children: [
@@ -95,16 +95,6 @@ class _FuturePageState extends State<FuturePage> {
                 style: TextStyle(fontSize: 50),
                 maxLines: 4,
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MainPage(),
-                      ),
-                    );
-                  },
-                  child: Text("go to main"))
             ],
           ),
         ),
