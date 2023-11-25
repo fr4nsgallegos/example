@@ -12,7 +12,7 @@ class _FuturePageState extends State<FuturePage> {
   String title = "Hola a todos soy title";
 
   Future<String> getTitle() async {
-    return Future.delayed(Duration(seconds: 4), () {
+    return Future.delayed(Duration(seconds: 10), () {
       return "Real - Kendrick Lamar";
     });
   }
@@ -34,15 +34,18 @@ class _FuturePageState extends State<FuturePage> {
           child: FutureBuilder(
             future: getTitle(),
             builder: (BuildContext context, AsyncSnapshot snap) {
-              print("-----------------------");
-              print("SNAP: $snap");
-              print("ESTADO DE CONEXIÓN: ${snap.connectionState}");
-              print("TIENE DATA?: ${snap.hasData}");
-              print("TIENE ERROR?: ${snap.hasError}");
-              print("VALOR: ${snap.data}");
-              print("-----------------------");
-              return Text(snap.data ?? "esperando");
-              // return Text(snap.data == null ? "esperando" : snap.data);
+              if (snap.hasData) {
+                return Text(snap.data);
+              }
+              return Container(
+                height: 20,
+                width: 20,
+                child: CircularProgressIndicator(
+                  backgroundColor: Colors.red,
+                  color: Colors.cyan,
+                  // strokeWidth: 8,
+                ),
+              );
             },
           ),
         ),
