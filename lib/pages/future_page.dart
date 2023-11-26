@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:example/models/person_model.dart';
 import 'package:example/pages/main_page.dart';
 import 'package:flutter/material.dart';
 
@@ -39,8 +40,29 @@ class _FuturePageState extends State<FuturePage> {
           "iEdad": 45,
           "sSexo": "F",
           "BViveEnPeru": true,
-          "SUrlImage": "httpimage"
+          "sUrlImage": "httpimage",
+          "btienePareja": false
         }
+      ];
+    });
+  }
+
+  Future<List<Persona>> getPersonas() async {
+    return Future.delayed(Duration(seconds: 4), () {
+      return [
+        Persona(
+            bViveEnPeru: true,
+            iEdad: 20,
+            sDni: "12346578",
+            sName: "Jhonny Gallegos",
+            bSexo: "M"),
+        Persona(
+          bViveEnPeru: true,
+          iEdad: 60,
+          sDni: "98765465421",
+          sName: "Maria Ibañez",
+          bSexo: "F",
+        )
       ];
     });
   }
@@ -55,18 +77,17 @@ class _FuturePageState extends State<FuturePage> {
         ),
         body: Center(
           child: FutureBuilder(
-            future: getProducts(),
+            future: getPersonas(),
             builder: (BuildContext context, AsyncSnapshot snap) {
               if (snap.hasData) {
-                List<Map<String, dynamic>> data = snap.data;
+                List<Persona> _personasList = snap.data;
                 return ListView.builder(
-                  itemCount: data.length,
+                  itemCount: _personasList.length,
                   itemBuilder: (BuildContext context, int index) {
+                    print(_personasList);
                     return ListTile(
-                      title: Text(
-                        data[index]["sName"],
-                      ),
-                      leading: Text(data[index]["iEdad"].toString()),
+                      title: Text(_personasList[index].sName),
+                      leading: Text(_personasList[index].bSexo),
                     );
                   },
                 );
