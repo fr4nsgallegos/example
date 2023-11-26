@@ -1,4 +1,5 @@
 import 'package:example/contants/constants.dart';
+import 'package:example/widgets/column1.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
