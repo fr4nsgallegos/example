@@ -23,22 +23,16 @@ class _FuturePageState extends State<FuturePage> {
     });
   }
 
-  Future<List<String>> getProducts() async {
+  Future<List<Map<String, dynamic>>> getProducts() async {
     return Future.delayed(Duration(seconds: 4), () {
-      return ["Fresa", "Mango", "Mandarina", "Palta"];
+      return [
+        {"id": 1, "name": "platano"},
+        {"id": 2, "name": "durazno"},
+        {"id": 5, "name": "mandarina"}
+      ];
     });
   }
 
-  List<String> lista2 = [
-    "arroz",
-    "papa",
-    "lechuga",
-    "tomate",
-    "arroz",
-    "papa",
-    "lechuga",
-    "tomate"
-  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -52,12 +46,15 @@ class _FuturePageState extends State<FuturePage> {
             future: getProducts(),
             builder: (BuildContext context, AsyncSnapshot snap) {
               if (snap.hasData) {
-                List<String> data = snap.data;
+                List<Map<String, dynamic>> data = snap.data;
                 return ListView.builder(
                   itemCount: data.length,
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
-                      title: Text(data[index]),
+                      title: Text(
+                        data[index]["name"],
+                      ),
+                      leading: Text(data[index]["id"].toString()),
                     );
                   },
                 );
