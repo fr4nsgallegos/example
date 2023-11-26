@@ -26,9 +26,21 @@ class _FuturePageState extends State<FuturePage> {
   Future<List<Map<String, dynamic>>> getProducts() async {
     return Future.delayed(Duration(seconds: 4), () {
       return [
-        {"id": 1, "name": "platano"},
-        {"id": 2, "name": "durazno"},
-        {"id": 5, "name": "mandarina"}
+        {
+          "sdni": "12346578",
+          "sName": "Jhonny Gallegos",
+          "iEdad": 45,
+          "sSexo": "M",
+          "bViveEnPeru": true
+        },
+        {
+          "sDni": "87654321",
+          "sName": "Juanita Perez",
+          "iEdad": 45,
+          "sSexo": "F",
+          "BViveEnPeru": true,
+          "SUrlImage": "httpimage"
+        }
       ];
     });
   }
@@ -52,9 +64,9 @@ class _FuturePageState extends State<FuturePage> {
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
                       title: Text(
-                        data[index]["name"],
+                        data[index]["sName"],
                       ),
-                      leading: Text(data[index]["id"].toString()),
+                      leading: Text(data[index]["iEdad"].toString()),
                     );
                   },
                 );
