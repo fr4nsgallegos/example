@@ -1,3 +1,4 @@
+import 'package:example/contants/constants.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -33,6 +34,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Federico Perez",
@@ -44,35 +46,22 @@ class ProfilePage extends StatelessWidget {
                         Text(
                           "Developer",
                           style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
+                            fontSize: 16,
+                            color: Colors.white.withOpacity(0.6),
                           ),
                         ),
+                        Divider(),
                         Container(
+                          padding: EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                              color: Colors.red,
+                              color: Colors.black.withOpacity(0.4),
                               borderRadius: BorderRadius.circular(5)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Column(
-                                children: [
-                                  Text("Folowers"),
-                                  Text("25"),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Text("Likes"),
-                                  Text("250"),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Text("Rating"),
-                                  Text("9.8"),
-                                ],
-                              ),
+                              Column1("Folowers", "25"),
+                              Column1("Likes", "254"),
+                              Column1("Rating", "8.3")
                             ],
                           ),
                         )
