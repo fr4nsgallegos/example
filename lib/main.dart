@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: ProfilePage(),
+      home: InitPage(),
       debugShowCheckedModeBanner: false,
     ),
   );

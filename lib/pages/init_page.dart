@@ -53,7 +53,7 @@ class InitPage extends StatelessWidget {
                 height: 50,
               ),
               const Text(
-                "Presione la pantalla con su dedo",
+                "Bienvenido esta es un app que te va a permitir bla bla bla, estamos asociados con bla bla bla",
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.white,
