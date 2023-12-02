@@ -1,6 +1,6 @@
 import 'package:example/pages/device_page.dart';
 import 'package:example/pages/future_page.dart';
-import 'package:example/pages/home_page.dart';
+import 'package:example/pages/scroll_page.dart';
 import 'package:example/pages/init_page.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +52,7 @@ class _MainPageState extends State<MainPage> {
             // ),
             FuturePage(),
             InitPage(),
-            HomePage(),
+            ScrollPage(),
             DevicePage(),
           ],
         ),

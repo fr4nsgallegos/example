@@ -1,4 +1,4 @@
-import 'package:example/pages/home_page.dart';
+import 'package:example/pages/scroll_page.dart';
 import 'package:flutter/material.dart';
 
 class InitPage extends StatelessWidget {
@@ -39,7 +39,7 @@ class InitPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => ScrollPage(),
                     ),
                   );
                 },
